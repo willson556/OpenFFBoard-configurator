@@ -8,6 +8,7 @@ from PyQt5.QtCore import QTimer,QEvent
 import main
 import buttonconf_ui
 import analogconf_ui
+import effect_plotter_ui
 from base_ui import WidgetUI
 
 class FfbUI(WidgetUI):
@@ -66,6 +67,9 @@ class FfbUI(WidgetUI):
         self.buttonbtns.buttonClicked.connect(self.buttonsChanged)
         self.axisbtns.buttonClicked.connect(self.axesChanged)
         self.pushButton_center.clicked.connect(lambda : self.main.comms.serialWrite("zeroenc\n"))
+
+        self.effect_plotter = effect_plotter_ui.EffectPlotterUI(self.main)
+        self.pushButton_show_effect_plots.clicked.connect(lambda : self.effect_plotter.show())
         
         #self.spinBox_cpr.valueChanged.connect(lambda v : self.main.comms.serialWrite("cpr="+str(v)+";"))
 

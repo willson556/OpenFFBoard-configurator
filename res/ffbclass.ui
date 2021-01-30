@@ -493,6 +493,13 @@
           </widget>
          </item>
          <item>
+          <widget class="QPushButton" name="pushButton_show_effect_plots">
+            <property name="text">
+              <string>Show Effect Plots</string>
+            </property>
+          </widget>
+        </item>
+        <item>
           <spacer name="horizontalSpacer">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
